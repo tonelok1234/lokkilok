@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="nn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lökki Lök Design – grafisk design og visuell kommunikasjon.">
+  <title>Lökki Lök Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-side="forsida">
+
+  <!-- ===== NAVIGASJON ===== -->
+  <nav class="nav" role="navigation" aria-label="Hovudnavigasjon">
+    <a href="#" class="nav-logo">Lökki Lök Design</a>
+    <ul class="nav-lenker" role="list">
+      <li><a href="#portefolje">Portefølje</a></li>
+      <li><a href="#om">Om</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="topp" aria-labelledby="hero-tittel-heading">
+    <div class="hero-innhald">
+      <span class="hero-label fade-inn" id="hero-label">Grafisk design og visuell kommunikasjon</span>
+      <h1 class="hero-tittel fade-inn" id="hero-tittel">Design som gjer inntrykk.</h1>
+      <p class="hero-ingress fade-inn" id="hero-ingress">Eg hjelper deg med grafisk design, identitet og visuell kommunikasjon som treffer.</p>
+      <div class="fade-inn" style="display:flex;gap:1rem;flex-wrap:wrap;">
+        <a href="#portefolje" class="knapp knapp-primær">Sjå arbeid</a>
+        <a href="#kontakt" class="knapp knapp-sekundær">Ta kontakt</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PORTEFØLJE ===== -->
+  <section class="seksjon" id="portefolje" aria-labelledby="portefolje-tittel">
+    <div class="seksjon-topp fade-inn">
+      <span class="seksjon-label">Arbeid</span>
+      <h2 class="seksjon-tittel" id="portefolje-tittel">Utvalde prosjekt</h2>
+    </div>
+    <div class="prosjekt-grid fade-inn" id="prosjekt-grid" role="list">
+      <!-- Fyllt inn av JS -->
+    </div>
+  </section>
+
+  <!-- ===== OM ===== -->
+  <section class="seksjon-full" id="om" aria-labelledby="om-tittel">
+    <div class="seksjon-innhald">
+      <div class="om-grid">
+        <div class="om-tekst fade-inn">
+          <span class="seksjon-label">Om meg</span>
+          <h2 id="om-tittel">Lökki Lök Design</h2>
+          <p id="om-tekst">Eg er ein sjølvstendig designar med passion for tydeleg og vakker kommunikasjon.</p>
+          <a href="#kontakt" class="knapp knapp-sekundær" style="margin-top:1.5rem;">Ta kontakt</a>
+        </div>
+        <div class="om-bilde fade-inn" aria-hidden="true" style="background:var(--grå-lys);border-radius:16px;">
+          <!-- Logo eller profilbilde kan leggast til her -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== KONTAKT ===== -->
+  <section class="seksjon" id="kontakt" aria-labelledby="kontakt-tittel">
+    <div class="kontakt-wrapper">
+      <div class="kontakt-info fade-inn">
+        <span class="seksjon-label">Kontakt</span>
+        <h2 class="seksjon-tittel" id="kontakt-tittel">La oss snakke</h2>
+        <p id="kontakt-ingress">Ta kontakt for ein uforpliktande prat om prosjektet ditt.</p>
+      </div>
+      <div class="fade-inn" id="kontakt-lenker">
+        <!-- Fyllt inn av JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer role="contentinfo">
+    <span class="footer-namn">Lökki Lök Design</span>
+    <span class="footer-tekst">Enkeltpersonsforetak</span>
+    <a href="admin.html" class="footer-admin" aria-label="Admin-innlogging">Admin</a>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

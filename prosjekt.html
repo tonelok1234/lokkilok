@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="nn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prosjekt – Lökki Lök Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-side="prosjekt">
+
+  <!-- ===== NAVIGASJON ===== -->
+  <nav class="nav" role="navigation" aria-label="Hovudnavigasjon">
+    <a href="index.html" class="nav-logo">Lökki Lök Design</a>
+    <ul class="nav-lenker" role="list">
+      <li><a href="index.html#portefolje">Portefølje</a></li>
+      <li><a href="index.html#om">Om</a></li>
+      <li><a href="index.html#kontakt">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== PROSJEKT-INNHALD ===== -->
+  <div id="prosjekt-innhald">
+
+    <div class="prosjekt-hero">
+      <a href="index.html#portefolje" class="tilbake-lenke">← Tilbake til portefølje</a>
+
+      <div class="prosjekt-detalj-meta">
+        <span class="prosjekt-tag" id="p-kategori"></span>
+        <span class="prosjekt-ar" id="p-ar"></span>
+      </div>
+
+      <h1 class="prosjekt-detalj-tittel" id="p-tittel">Prosjekt</h1>
+      <p class="prosjekt-detalj-ingress" id="p-ingress"></p>
+
+      <div id="p-ekstern-wrapper" style="display:none;margin-bottom:1rem;">
+        <a id="p-ekstern-lenke" href="#" target="_blank" rel="noopener" class="knapp knapp-aksent">
+          Sjå prosjektet live
+          <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+            <polyline points="15 3 21 3 21 9"/>
+            <line x1="10" y1="14" x2="21" y2="3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Hovudbilde -->
+    <div style="max-width:var(--brei);margin:0 auto;padding:0 2rem;">
+      <div class="prosjekt-detalj-bilde" id="p-bilde" aria-hidden="true">
+        <!-- Bilde fyllt inn av JS om det finst -->
+      </div>
+    </div>
+
+    <!-- Tekst -->
+    <div class="prosjekt-detalj-innhald">
+      <div id="p-tekst"></div>
+    </div>
+
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer role="contentinfo">
+    <span class="footer-namn">Lökki Lök Design</span>
+    <span class="footer-tekst">Enkeltpersonsforetak</span>
+    <a href="admin.html" class="footer-admin" aria-label="Admin-innlogging">Admin</a>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

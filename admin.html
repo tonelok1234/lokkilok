@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="nn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin – Lökki Lök Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== INNLOGGING ===== -->
+  <div id="login-visning" class="admin-login-wrapper" style="display:flex;">
+    <div class="admin-login-boks">
+      <h1>Admin-panel</h1>
+      <p>Logg inn for å redigere innhaldet på Lökki Lök Design.</p>
+
+      <form onsubmit="loggInn(event)" novalidate>
+        <div class="form-gruppe">
+          <label for="passord-felt">Passord</label>
+          <input
+            type="password"
+            id="passord-felt"
+            placeholder="Skriv inn passord"
+            autocomplete="current-password"
+            required
+            autofocus>
+        </div>
+        <p id="feil-melding" class="feil-melding" role="alert" style="display:none;"></p>
+        <button type="submit" class="knapp knapp-primær" style="width:100%;justify-content:center;margin-top:0.5rem;">
+          Logg inn
+        </button>
+      </form>
+
+      <p style="margin-top:1.5rem;font-size:0.8rem;color:var(--grå);">
+        Standard passord: <code>LokkilokDesign2026</code><br>
+        <em>Endre passordet etter første innlogging!</em>
+      </p>
+
+      <a href="index.html" style="display:block;margin-top:1.5rem;font-size:0.9rem;color:var(--grå);">
+        ← Tilbake til sida
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== ADMIN-PANEL ===== -->
+  <div id="panel-visning" style="display:none;">
+
+    <nav class="admin-nav">
+      <span class="admin-nav-tittel">Lökki Lök Design – Admin</span>
+      <div style="display:flex;gap:0.75rem;align-items:center;flex-wrap:wrap;">
+        <a href="index.html" target="_blank" class="knapp knapp-sekundær" style="padding:0.4rem 0.9rem;font-size:0.82rem;color:#fff;border-color:rgba(255,255,255,0.3);">
+          ↗ Sjå sida
+        </a>
+        <button onclick="eksporterInnhald()" class="knapp knapp-sekundær" style="padding:0.4rem 0.9rem;font-size:0.82rem;color:#fff;border-color:rgba(255,255,255,0.3);" title="Last ned data.js og legg fila i js/-mappa for å publisere">
+          ⬇ Eksporter
+        </button>
+        <button onclick="loggUt()" class="knapp knapp-sekundær" style="padding:0.4rem 0.9rem;font-size:0.82rem;color:#fff;border-color:rgba(255,255,255,0.3);">
+          Logg ut
+        </button>
+      </div>
+    </nav>
+
+    <div class="admin-panel">
+      <div class="admin-innhald">
+
+        <h1 style="margin-bottom:0.4rem;font-size:1.6rem;letter-spacing:-0.03em;">Rediger innhald</h1>
+        <p style="color:var(--grå);margin-bottom:3rem;font-size:0.9rem;">
+          Endringar vert lagra i nettlesaren. Klikk «Eksporter» og bytt ut <code>js/data.js</code> for å publisere.
+        </p>
+
+        <!-- ===== OM SIDA ===== -->
+        <div class="admin-seksjon">
+          <h2>Om sida</h2>
+          <div id="melding-om" class="melding-ok" role="status">✓ Lagra!</div>
+
+          <div class="grid-2">
+            <div class="form-gruppe">
+              <label for="om-namn">Namn / firma</label>
+              <input type="text" id="om-namn" placeholder="Lökki Lök Design">
+            </div>
+            <div class="form-gruppe">
+              <label for="om-undertittel">Undertittel (f.eks. Enkeltpersonsforetak)</label>
+              <input type="text" id="om-undertittel" placeholder="Enkeltpersonsforetak">
+            </div>
+          </div>
+
+          <div class="form-gruppe">
+            <label for="om-hero-label">Liten tekst over tittelen på forsida</label>
+            <input type="text" id="om-hero-label" placeholder="Grafisk design og visuell kommunikasjon">
+          </div>
+
+          <div class="form-gruppe">
+            <label for="om-hero-tittel">Hovudtittel på forsida</label>
+            <input type="text" id="om-hero-tittel" placeholder="Design som gjer inntrykk.">
+          </div>
+
+          <div class="form-gruppe">
+            <label for="om-hero-ingress">Ingress-tekst på forsida</label>
+            <textarea id="om-hero-ingress" rows="2" placeholder="Eg hjelper deg med …"></textarea>
+          </div>
+
+          <div class="form-gruppe">
+            <label for="om-tekst">Om-tekst (under «Om meg»)</label>
+            <textarea id="om-tekst" rows="4" placeholder="Eg er ein sjølvstendig designar …"></textarea>
+          </div>
+
+          <div class="form-gruppe">
+            <label for="om-kontakt-ingress">Ingress i kontaktseksjonen</label>
+            <textarea id="om-kontakt-ingress" rows="2" placeholder="Ta kontakt for ein uforpliktande prat …"></textarea>
+          </div>
+
+          <div class="grid-2">
+            <div class="form-gruppe">
+              <label for="om-epost">E-post</label>
+              <input type="email" id="om-epost" placeholder="hei@lokkilok.no">
+            </div>
+            <div class="form-gruppe">
+              <label for="om-telefon">Telefon (valfritt)</label>
+              <input type="tel" id="om-telefon" placeholder="+47 000 00 000">
+            </div>
+          </div>
+
+          <div class="form-gruppe">
+            <label for="om-instagram">Instagram-brukarnamn (valfritt, utan @)</label>
+            <input type="text" id="om-instagram" placeholder="lokkilokdesign">
+          </div>
+
+          <button class="knapp knapp-primær" onclick="lagreOm()">Lagre om-informasjon</button>
+        </div>
+
+        <!-- ===== PROSJEKT ===== -->
+        <div class="admin-seksjon">
+          <h2>Prosjekt</h2>
+          <div id="melding-prosjekt" class="melding-ok" role="status">✓ Lagra!</div>
+
+          <p style="color:var(--grå);font-size:0.85rem;margin-bottom:1.25rem;">
+            Skjulte prosjekt vises ikkje på forsida, men er tilgjengelege via direkte lenke:<br>
+            <code>prosjekt.html?id=prosjekt-id</code>
+          </p>
+
+          <div id="prosjekt-liste">
+            <!-- Fyllt inn av JS -->
+          </div>
+
+          <button class="knapp knapp-aksent" style="margin-top:1rem;" onclick="leggTilProsjekt()">
+            + Legg til prosjekt
+          </button>
+        </div>
+
+        <!-- ===== ENDRE PASSORD ===== -->
+        <div class="admin-seksjon">
+          <h2>Endre passord</h2>
+          <p id="melding-passord" class="melding-ok" role="status"></p>
+
+          <div class="grid-2">
+            <div class="form-gruppe">
+              <label for="nytt-passord">Nytt passord (min. 8 teikn)</label>
+              <input type="password" id="nytt-passord" autocomplete="new-password">
+            </div>
+            <div class="form-gruppe">
+              <label for="gjenta-passord">Gjenta passord</label>
+              <input type="password" id="gjenta-passord" autocomplete="new-password">
+            </div>
+          </div>
+
+          <button class="knapp knapp-primær" onclick="endrePassord()">Endre passord</button>
+        </div>
+
+        <!-- ===== NULLSTILL ===== -->
+        <div class="admin-seksjon">
+          <h2>Nullstill innhald</h2>
+          <p style="color:var(--grå);font-size:0.9rem;margin-bottom:1rem;">
+            Dette slettar alle endringar og tilbakestiller til standardinnhaldet. Kan ikkje angrast.
+          </p>
+          <button class="knapp knapp-fare" onclick="nullstillInnhald()">
+            Nullstill til standardinnhald
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
